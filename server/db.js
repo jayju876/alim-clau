@@ -5,8 +5,9 @@ import { fileURLToPath } from "node:url";
 import { v4 as uuid } from "uuid";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-export const dataDir = path.join(__dirname, "data");
-export const uploadsDir = path.join(__dirname, "uploads");
+const isVercel = process.env.VERCEL === "1";
+export const dataDir = isVercel ? path.join("/tmp", "cms-data") : path.join(__dirname, "data");
+export const uploadsDir = isVercel ? path.join("/tmp", "cms-uploads") : path.join(__dirname, "uploads");
 const dbPath = path.join(dataDir, "cms.json");
 
 const now = () => new Date().toISOString();
@@ -33,6 +34,43 @@ const emptyDb = () => ({
   }
 });
 
+export async function syncAdminFromEnv() {
+  const email = (process.env.CMS_ADMIN_EMAIL || "admin@example.com").trim();
+  const password = process.env.CMS_ADMIN_PASSWORD || "ChangeMe123!";
+  const shouldSync =
+    process.env.CMS_SYNC_ADMIN === "true" ||
+    process.env.NODE_ENV === "development" ||
+    process.env.VERCEL === "1";
+
+  if (!shouldSync) return;
+
+  const db = await readDb();
+  const normalized = email.toLowerCase();
+  let user = db.users.find((item) => item.email.toLowerCase() === normalized);
+  const passwordHash = await bcrypt.hash(password, 12);
+
+  if (!user) {
+    db.users.push({
+      id: uuid(),
+      email,
+      passwordHash,
+      role: "admin",
+      createdAt: now(),
+      updatedAt: now()
+    });
+    await writeDb(db);
+    console.log(`Created admin user from env: ${email}`);
+    return;
+  }
+
+  user.email = email;
+  user.passwordHash = passwordHash;
+  user.role = "admin";
+  user.updatedAt = now();
+  await writeDb(db);
+  console.log(`Synced admin credentials from env: ${email}`);
+}
+
 export async function ensureDb() {
   await fs.mkdir(dataDir, { recursive: true });
   await fs.mkdir(uploadsDir, { recursive: true });
@@ -44,7 +82,7 @@ export async function ensureDb() {
     const db = emptyDb();
     db.users.push({
       id: uuid(),
-      email: process.env.CMS_ADMIN_EMAIL || "admin@example.com",
+      email: (process.env.CMS_ADMIN_EMAIL || "admin@example.com").trim(),
       passwordHash,
       role: "admin",
       createdAt: now(),

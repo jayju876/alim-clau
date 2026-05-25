@@ -34,6 +34,21 @@ http://localhost:8080/admin
 
 The API seeds the first admin user the first time it creates `server/data/cms.json`.
 
+**Important:** Changing `.env` later does **not** update an existing `server/data/cms.json` password. If login fails with the correct email/password:
+
+```sh
+npm run reset-admin
+```
+
+Or set `CMS_SYNC_ADMIN=true` and restart the CMS server to sync credentials from `.env`.
+
+Use plain values in `.env` (no markdown):
+
+```env
+CMS_ADMIN_EMAIL=admin@example.com
+CMS_ADMIN_PASSWORD=ChangeMe123!
+```
+
 ## Production
 
 Build the frontend:
@@ -47,6 +62,18 @@ Start the combined API/static server:
 ```sh
 npm start
 ```
+
+### Vercel environment variables
+
+In Vercel → Project → Settings → Environment Variables, add:
+
+- `CMS_ADMIN_EMAIL` = `admin@example.com`
+- `CMS_ADMIN_PASSWORD` = `ChangeMe123!`
+- `JWT_SECRET` = (any long random string)
+- `CMS_SYNC_ADMIN` = `true` (keeps admin password in sync with env on serverless)
+- `CLIENT_ORIGIN` = your site URL, e.g. `https://your-app.vercel.app`
+
+Redeploy after saving. Login at `https://your-app.vercel.app/admin/login`.
 
 The Node server serves:
 

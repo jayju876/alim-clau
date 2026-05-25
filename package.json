@@ -6,6 +6,8 @@
   "scripts": {
     "dev": "vite",
     "dev:cms": "node server/index.js",
+    "dev:all": "npx --yes concurrently -k \"npm run dev:cms\" \"npm run dev\"",
+    "reset-admin": "node server/scripts/reset-admin.js",
     "build": "vite build",
     "postbuild": "node scripts/postbuild.js",
     "build:dev": "vite build --mode development",
