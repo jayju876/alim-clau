@@ -23,9 +23,7 @@ async function request(path: string, options: RequestInit = {}) {
   try {
     response = await fetch(`${API_BASE}${path}`, { ...options, headers });
   } catch {
-    throw new Error(
-      "CMS API is not reachable. Start it with: npm run dev:cms (or deploy with the /api server on Vercel)."
-    );
+    throw new Error("Unable to reach the CMS service. Please try again later.");
   }
   if (!response.ok) {
     const error = await response.json().catch(() => ({ error: "Request failed" }));
