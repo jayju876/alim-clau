@@ -19,7 +19,14 @@ async function request(path: string, options: RequestInit = {}) {
   if (token) headers.set("Authorization", `Bearer ${token}`);
   if (!(options.body instanceof FormData)) headers.set("Content-Type", "application/json");
 
-  const response = await fetch(`${API_BASE}${path}`, { ...options, headers });
+  let response: Response;
+  try {
+    response = await fetch(`${API_BASE}${path}`, { ...options, headers });
+  } catch {
+    throw new Error(
+      "CMS API is not reachable. Start it with: npm run dev:cms (or deploy with the /api server on Vercel)."
+    );
+  }
   if (!response.ok) {
     const error = await response.json().catch(() => ({ error: "Request failed" }));
     throw new Error(error.error || error.message || "Request failed");

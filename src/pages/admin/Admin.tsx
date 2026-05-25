@@ -17,6 +17,7 @@ import {
   Users
 } from "lucide-react";
 import { cmsApi, cmsAuth, CmsUser } from "@/lib/cmsApi";
+import { normalizeEmail } from "@/lib/normalizeEmail";
 import RichTextEditor from "./RichTextEditor";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -167,7 +168,7 @@ export const AdminLogin = () => {
     event.preventDefault();
     setLoading(true);
     try {
-      const response = await cmsApi.login(email, password);
+      const response = await cmsApi.login(normalizeEmail(email), password);
       cmsAuth.setToken(response.token);
       window.location.href = "/admin";
     } catch (error) {
@@ -203,6 +204,9 @@ export const AdminLogin = () => {
               <Input id="password" type="password" value={password} onChange={(event) => setPassword(event.target.value)} />
             </div>
             <Button type="submit" className="w-full" disabled={loading}>{loading ? "Logging in..." : "Login"}</Button>
+            <p className="text-xs text-muted-foreground">
+              Use plain email <strong>admin@example.com</strong> and password <strong>ChangeMe123!</strong>. Run <code>npm run dev:cms</code> before logging in locally.
+            </p>
           </form>
           <div className="mt-6 border-t pt-4">
             <Label htmlFor="forgot">Forgot password</Label>
