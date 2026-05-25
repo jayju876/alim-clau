@@ -69,6 +69,8 @@ This project is configured for both Vercel and GitHub Pages deployment.
 - `vercel.json` is already present.
 - Build command: `npm run build`
 - Output directory: `dist`
+- **Production branch:** use `master` (or `main` after it matches `master`). The repo’s default `main` branch must contain the app, not only a placeholder README.
+- In Vercel → Project → Settings → Git → Production Branch, set **master** if deployments still 404.
 - Vercel will serve the SPA routes correctly using the configured rewrite rules.
 
 ### GitHub Pages
