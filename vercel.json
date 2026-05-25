@@ -1,5 +1,4 @@
 {
-  "$comment": "Production build — admin credentials are not exposed in the frontend.",
   "framework": "vite",
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
