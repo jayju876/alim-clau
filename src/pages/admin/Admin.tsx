@@ -159,8 +159,8 @@ const Admin = () => {
 };
 
 export const AdminLogin = () => {
-  const [email, setEmail] = useState("admin@example.com");
-  const [password, setPassword] = useState("ChangeMe123!");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [forgotEmail, setForgotEmail] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -197,21 +197,18 @@ export const AdminLogin = () => {
           <form onSubmit={login} className="space-y-4">
             <div className="space-y-2">
               <Label htmlFor="email">Email</Label>
-              <Input id="email" type="email" value={email} onChange={(event) => setEmail(event.target.value)} />
+              <Input id="email" type="email" autoComplete="username" placeholder="Email address" value={email} onChange={(event) => setEmail(event.target.value)} />
             </div>
             <div className="space-y-2">
               <Label htmlFor="password">Password</Label>
-              <Input id="password" type="password" value={password} onChange={(event) => setPassword(event.target.value)} />
+              <Input id="password" type="password" autoComplete="current-password" placeholder="Password" value={password} onChange={(event) => setPassword(event.target.value)} />
             </div>
             <Button type="submit" className="w-full" disabled={loading}>{loading ? "Logging in..." : "Login"}</Button>
-            <p className="text-xs text-muted-foreground">
-              Use plain email <strong>admin@example.com</strong> and password <strong>ChangeMe123!</strong>. Run <code>npm run dev:cms</code> before logging in locally.
-            </p>
           </form>
           <div className="mt-6 border-t pt-4">
             <Label htmlFor="forgot">Forgot password</Label>
             <div className="mt-2 flex gap-2">
-              <Input id="forgot" type="email" placeholder="admin@example.com" value={forgotEmail} onChange={(event) => setForgotEmail(event.target.value)} />
+              <Input id="forgot" type="email" placeholder="Email address" value={forgotEmail} onChange={(event) => setForgotEmail(event.target.value)} />
               <Button variant="outline" onClick={forgot}>Send</Button>
             </div>
           </div>
