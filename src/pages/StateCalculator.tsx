@@ -141,8 +141,8 @@ const StateCalculator = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title={`${stateRecord.name} Alimony Calculator (2026) - Spousal Support Estimate`}
-        description={`Estimate ${stateRecord.name} alimony payments with a free state-wise alimony calculator. Review local spousal support factors, FAQs, legal notes, and monthly/yearly estimates.`}
+        title={`${stateRecord.name} Alimony Calculator (2026) | Spousal Support Estimate`}
+        description={`Estimate ${stateRecord.name} alimony and spousal support with a free calculator. Compare monthly and yearly support using income, marriage length, children, and state factors.`}
         keywords={`${stateRecord.name} alimony calculator, ${stateRecord.name} spousal support calculator, divorce alimony calculator, state-wise alimony calculator`}
         canonical={canonicalUrl}
         structuredData={structuredData}

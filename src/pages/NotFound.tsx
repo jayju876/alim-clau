@@ -19,8 +19,8 @@ const NotFound = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead 
-        title="Page Not Found (404) - LegalAlimonyCalculator.com"
-        description="The page you're looking for doesn't exist. Find your state's alimony calculator or return to our homepage for free spousal support calculations."
+        title="Page Not Found | LegalAlimonyCalculator.com"
+        description="This page could not be found. Return to the free US alimony calculator or choose a state-specific spousal support estimate."
         canonical={`${SITE_URL}${location.pathname}`}
       />
       <Navigation />

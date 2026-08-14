@@ -23,6 +23,16 @@ const parseLinks = (value = "") =>
     return { label: label?.trim(), url: url?.trim() };
   }).filter((item) => item.label && item.url);
 
+const buildCmsTitle = (type: CmsContentProps["type"], title: string) =>
+  type === "blog" ? `${title} | Alimony & Divorce Law` : `${title} | LegalAlimonyCalculator.com`;
+
+const buildCmsDescription = (type: CmsContentProps["type"], record: any) => {
+  if (record.excerpt) return record.excerpt;
+  return type === "blog"
+    ? `Read ${record.title} for practical guidance on alimony, spousal support, and divorce law in the United States.`
+    : `Explore ${record.title} for clear educational information about alimony, spousal support, and family-law planning.`;
+};
+
 const CmsContent = ({ type }: CmsContentProps) => {
   const { slug = "" } = useParams();
   const [record, setRecord] = useState<any>(null);
@@ -42,12 +52,14 @@ const CmsContent = ({ type }: CmsContentProps) => {
   const faqs = parseFaqs(record.faqs);
   const links = parseLinks(record.internalLinks);
   const canonical = seo.canonicalUrl || `${SITE_URL}/${type === "blog" ? "blog" : "p"}/${record.slug}`;
+  const fallbackTitle = buildCmsTitle(type, record.title);
+  const fallbackDescription = buildCmsDescription(type, record);
 
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title={seo.metaTitle || record.title}
-        description={seo.metaDescription || record.excerpt || record.title}
+        title={seo.metaTitle || fallbackTitle}
+        description={seo.metaDescription || fallbackDescription}
         keywords={seo.metaKeywords}
         canonical={canonical}
         image={record.featuredImage || undefined}
@@ -55,7 +67,7 @@ const CmsContent = ({ type }: CmsContentProps) => {
           "@context": "https://schema.org",
           "@type": type === "blog" ? "Article" : "WebPage",
           "headline": record.title,
-          "description": seo.metaDescription || record.excerpt,
+          "description": seo.metaDescription || fallbackDescription,
           "dateModified": record.lastUpdated || record.updatedAt,
           "author": record.author ? { "@type": "Person", "name": record.author.name } : undefined
         }}

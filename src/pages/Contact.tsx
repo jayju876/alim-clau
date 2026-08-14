@@ -69,8 +69,8 @@ const Contact = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead 
-        title="Contact Us - Alimony Calculator Support & Questions"
-        description="Contact LegalAlimonyCalculator.com for support, questions, or feedback about our free alimony calculators. Get help with spousal support calculations and legal resources."
+        title="Contact LegalAlimonyCalculator.com | Calculator Support"
+        description="Contact LegalAlimonyCalculator.com with questions or feedback about our free alimony calculators, spousal support estimates, and family-law resources."
         keywords="contact alimony calculator, calculator support, legal questions, spousal support help"
         canonical={`${SITE_URL}/contact`}
         structuredData={structuredData}

@@ -56,8 +56,8 @@ const toc = [
 ];
 
 const Index = () => {
-  const title = "Alimony Calculator USA (2026) - Estimate Spousal Support by State";
-  const description = "Use our free US Alimony Calculator to estimate spousal support payments by state. Calculate divorce and alimony estimates instantly with updated US legal factors.";
+  const title = "US Alimony Calculator by State (2026)";
+  const description = "Estimate monthly and yearly spousal support with a free US alimony calculator. Compare state factors, income differences, marriage duration, and child support.";
   const structuredData = [
     generateWebsiteSchema(),
     generateOrganizationSchema(),

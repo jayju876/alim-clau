@@ -12,8 +12,8 @@ const About = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead 
-        title="About Us - Expert Alimony Calculators & Legal Tools"
-        description="Learn about LegalAlimonyCalculator.com - providing expert-reviewed, state-specific alimony calculators based on current family law. Free, accurate, and privacy-protected tools."
+        title="About LegalAlimonyCalculator.com | Alimony Tools & Methodology"
+        description="Learn how LegalAlimonyCalculator.com builds free, state-specific alimony calculators using public family-law factors, expert review, and browser-based privacy."
         keywords="about alimony calculator, legal expertise, family law tools, divorce support tools"
         canonical={`${SITE_URL}/about`}
         structuredData={structuredData}

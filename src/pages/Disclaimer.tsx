@@ -9,8 +9,8 @@ const Disclaimer = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead 
-        title="Legal Disclaimer & Privacy Policy - LegalAlimonyCalculator.com"
-        description="Important legal disclaimers and privacy policy for LegalAlimonyCalculator.com. Understand limitations, liability, and privacy protection for our alimony calculator tools."
+        title="Alimony Calculator Legal Disclaimer | LegalAlimonyCalculator.com"
+        description="Read the legal disclaimer for LegalAlimonyCalculator.com, including calculator limitations, educational-use guidance, liability boundaries, and privacy notes."
         keywords="legal disclaimer, privacy policy, alimony calculator legal terms, liability limitation"
         canonical={`${SITE_URL}/disclaimer`}
       />

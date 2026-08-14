@@ -92,11 +92,54 @@ const pageCopy: Record<string, { title: string; description: string; sections: A
   }
 };
 
+const pageSeo: Record<string, { title: string; description: string }> = {
+  "privacy-policy": {
+    title: "Privacy Policy | LegalAlimonyCalculator.com",
+    description: "See how LegalAlimonyCalculator.com handles calculator inputs, contact information, cookies, and privacy for visitors using our alimony tools."
+  },
+  "terms-and-conditions": {
+    title: "Alimony Calculator Terms & Conditions | LegalAlimonyCalculator.com",
+    description: "Review the terms for using LegalAlimonyCalculator.com, including educational use, calculator estimates, acceptable use, and legal limitations."
+  },
+  "editorial-policy": {
+    title: "Editorial Policy for Alimony Content | LegalAlimonyCalculator.com",
+    description: "Learn how our alimony and divorce content is sourced, reviewed, updated, and written for clear, responsible family-law education."
+  },
+  "legal-disclaimer": {
+    title: "Alimony Calculator Legal Disclaimer | LegalAlimonyCalculator.com",
+    description: "Understand the limits of our alimony estimates, the educational purpose of this site, and why state-specific legal advice requires a licensed attorney."
+  },
+  "meet-our-experts": {
+    title: "Alimony Research & Legal Review Team | LegalAlimonyCalculator.com",
+    description: "Meet the research analyst and attorney reviewer who support the accuracy, clarity, and responsible presentation of our US alimony calculator content."
+  },
+  "how-we-calculate-alimony": {
+    title: "How Our US Alimony Calculator Works | LegalAlimonyCalculator.com",
+    description: "See how our US alimony calculator uses income, marriage duration, state factors, children, and child support to produce educational estimates."
+  },
+  "data-sources": {
+    title: "Alimony Calculator Data Sources | LegalAlimonyCalculator.com",
+    description: "Review the public statutes, court resources, rules, bar materials, and federal guidance used to inform our alimony calculator content."
+  },
+  "state-law-references": {
+    title: "US State Alimony Law References | LegalAlimonyCalculator.com",
+    description: "Browse state-by-state alimony calculator references, support factors, legal notes, FAQs, and links for all 50 US states."
+  },
+  "blog": {
+    title: "Alimony & Divorce Law Blog | LegalAlimonyCalculator.com",
+    description: "Read practical guides about alimony, spousal support, divorce law, state rules, family-law planning, and calculator updates."
+  }
+};
+
 const TrustPage = ({ slug }: TrustPageProps) => {
   const page = pageCopy[slug] || pageCopy["legal-disclaimer"];
+  const seo = pageSeo[slug] || {
+    title: `${page.title} | LegalAlimonyCalculator.com`,
+    description: page.description
+  };
   const url = `${SITE_URL}/${slug}`;
   const structuredData = [
-    generateWebPageSchema(page.title, page.description, url),
+    generateWebPageSchema(page.title, seo.description, url),
     generateBreadcrumbSchema([
       { name: "Home", url: SITE_URL },
       { name: page.title, url }
@@ -106,8 +149,8 @@ const TrustPage = ({ slug }: TrustPageProps) => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title={`${page.title} - LegalAlimonyCalculator.com`}
-        description={page.description}
+        title={seo.title}
+        description={seo.description}
         canonical={url}
         structuredData={structuredData}
       />
@@ -116,7 +159,7 @@ const TrustPage = ({ slug }: TrustPageProps) => {
         <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: page.title, href: `/${slug}` }]} />
         <section className="max-w-4xl mx-auto mb-10">
           <h1 className="text-4xl font-bold mb-4">{page.title}</h1>
-          <p className="text-xl text-muted-foreground">{page.description}</p>
+          <p className="text-xl text-muted-foreground">{seo.description}</p>
         </section>
 
         <section className="max-w-4xl mx-auto space-y-6 mb-12">
