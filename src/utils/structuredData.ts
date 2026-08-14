@@ -23,7 +23,7 @@ export const generateOrganizationSchema = () => ({
   "name": SITE_NAME,
   "description": "Provider of free US alimony calculators and educational spousal support resources.",
   "url": SITE_URL,
-  "logo": `${SITE_URL}/favicon.ico`,
+  "logo": `${SITE_URL}/favicon.ico.png`,
   "sameAs": [],
   "contactPoint": {
     "@type": "ContactPoint",
