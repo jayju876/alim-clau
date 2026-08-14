@@ -24,7 +24,7 @@ const parseLinks = (value = "") =>
   }).filter((item) => item.label && item.url);
 
 const buildCmsTitle = (type: CmsContentProps["type"], title: string) =>
-  type === "blog" ? `${title} | Alimony & Divorce Law` : `${title} | LegalAlimonyCalculator.com`;
+  type === "blog" ? `${title} | Alimony & Divorce Law` : title;
 
 const buildCmsDescription = (type: CmsContentProps["type"], record: any) => {
   if (record.excerpt) return record.excerpt;

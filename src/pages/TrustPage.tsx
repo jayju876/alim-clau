@@ -94,39 +94,39 @@ const pageCopy: Record<string, { title: string; description: string; sections: A
 
 const pageSeo: Record<string, { title: string; description: string }> = {
   "privacy-policy": {
-    title: "Privacy Policy | LegalAlimonyCalculator.com",
+    title: "Privacy Policy | Data Handling",
     description: "See how LegalAlimonyCalculator.com handles calculator inputs, contact information, cookies, and privacy for visitors using our alimony tools."
   },
   "terms-and-conditions": {
-    title: "Alimony Calculator Terms & Conditions | LegalAlimonyCalculator.com",
+    title: "Alimony Calculator Terms & Conditions | User Rules",
     description: "Review the terms for using LegalAlimonyCalculator.com, including educational use, calculator estimates, acceptable use, and legal limitations."
   },
   "editorial-policy": {
-    title: "Editorial Policy for Alimony Content | LegalAlimonyCalculator.com",
+    title: "Editorial Policy for Alimony Content | Review Standards",
     description: "Learn how our alimony and divorce content is sourced, reviewed, updated, and written for clear, responsible family-law education."
   },
   "legal-disclaimer": {
-    title: "Alimony Calculator Legal Disclaimer | LegalAlimonyCalculator.com",
+    title: "Alimony Calculator Legal Disclaimer | Educational Limits",
     description: "Understand the limits of our alimony estimates, the educational purpose of this site, and why state-specific legal advice requires a licensed attorney."
   },
   "meet-our-experts": {
-    title: "Alimony Research & Legal Review Team | LegalAlimonyCalculator.com",
+    title: "Alimony Research & Legal Review Team | Contributors",
     description: "Meet the research analyst and attorney reviewer who support the accuracy, clarity, and responsible presentation of our US alimony calculator content."
   },
   "how-we-calculate-alimony": {
-    title: "How Our US Alimony Calculator Works | LegalAlimonyCalculator.com",
+    title: "How Our US Alimony Calculator Works | Methodology",
     description: "See how our US alimony calculator uses income, marriage duration, state factors, children, and child support to produce educational estimates."
   },
   "data-sources": {
-    title: "Alimony Calculator Data Sources | LegalAlimonyCalculator.com",
+    title: "Alimony Calculator Data Sources | Research Basis",
     description: "Review the public statutes, court resources, rules, bar materials, and federal guidance used to inform our alimony calculator content."
   },
   "state-law-references": {
-    title: "US State Alimony Law References | LegalAlimonyCalculator.com",
+    title: "US State Alimony Law References | 50-State Guide",
     description: "Browse state-by-state alimony calculator references, support factors, legal notes, FAQs, and links for all 50 US states."
   },
   "blog": {
-    title: "Alimony & Divorce Law Blog | LegalAlimonyCalculator.com",
+    title: "Alimony & Divorce Law Blog | Guides and Updates",
     description: "Read practical guides about alimony, spousal support, divorce law, state rules, family-law planning, and calculator updates."
   }
 };
@@ -134,7 +134,7 @@ const pageSeo: Record<string, { title: string; description: string }> = {
 const TrustPage = ({ slug }: TrustPageProps) => {
   const page = pageCopy[slug] || pageCopy["legal-disclaimer"];
   const seo = pageSeo[slug] || {
-    title: `${page.title} | LegalAlimonyCalculator.com`,
+    title: page.title,
     description: page.description
   };
   const url = `${SITE_URL}/${slug}`;

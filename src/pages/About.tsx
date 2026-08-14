@@ -12,7 +12,7 @@ const About = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead 
-        title="About LegalAlimonyCalculator.com | Alimony Tools & Methodology"
+        title="About the Alimony Calculator | Tools & Methodology"
         description="Learn how LegalAlimonyCalculator.com builds free, state-specific alimony calculators using public family-law factors, expert review, and browser-based privacy."
         keywords="about alimony calculator, legal expertise, family law tools, divorce support tools"
         canonical={`${SITE_URL}/about`}

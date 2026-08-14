@@ -37,14 +37,19 @@ const SEOHead = ({
     };
   }, []);
 
+  const stripBrandFromTitle = (value: string) =>
+    value
+      .replace(/\s*[|–—-]?\s*LegalAlimonyCalculator\.com\s*/gi, " ")
+      .replace(/\s{2,}/g, " ")
+      .trim();
   const effectiveTitle = override.metaTitle || title;
   const effectiveDescription = override.metaDescription || description;
   const effectiveKeywords = override.metaKeywords || keywords;
   const effectiveCanonical = override.canonicalUrl || canonical;
   const effectiveOgTitle = override.ogTitle || effectiveTitle;
   const effectiveOgDescription = override.ogDescription || effectiveDescription;
-  const fullTitle = effectiveTitle.includes("LegalAlimonyCalculator") ? effectiveTitle : `${effectiveTitle} | ${SITE_NAME}`;
-  const ogFullTitle = effectiveOgTitle.includes("LegalAlimonyCalculator") ? effectiveOgTitle : `${effectiveOgTitle} | ${SITE_NAME}`;
+  const fullTitle = stripBrandFromTitle(effectiveTitle);
+  const ogFullTitle = stripBrandFromTitle(effectiveOgTitle);
   const url = effectiveCanonical || (typeof window !== 'undefined' ? window.location.href : '');
 
   return (
