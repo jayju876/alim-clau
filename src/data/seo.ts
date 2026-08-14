@@ -1,4 +1,4 @@
-export const SITE_URL = "https://legalalimonycalculator.com";
+export const SITE_URL = "https://www.legalalimonycalculator.com";
 export const SITE_NAME = "LegalAlimonyCalculator.com";
 export const LAST_UPDATED = "May 24, 2026";
 export const REVIEWED_DATE = "May 24, 2026";

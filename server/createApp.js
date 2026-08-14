@@ -21,6 +21,23 @@ export async function createApp({ serveStatic = false } = {}) {
   await syncAdminFromEnv();
 
   const app = express();
+  const canonicalHostname = process.env.CANONICAL_HOST || "www.legalalimonycalculator.com";
+  const nonCanonicalHostnames = new Set(["legalalimonycalculator.com"]);
+
+  app.use((req, res, next) => {
+    const forwardedHost = req.headers["x-forwarded-host"];
+    const requestHost = String(forwardedHost || req.headers.host || "")
+      .split(",")[0]
+      .trim()
+      .split(":")[0]
+      .toLowerCase();
+
+    if (nonCanonicalHostnames.has(requestHost)) {
+      return res.redirect(308, `https://${canonicalHostname}${req.originalUrl}`);
+    }
+
+    return next();
+  });
 
   app.use(
   cors({
