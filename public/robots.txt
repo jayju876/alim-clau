@@ -1,4 +1,4 @@
-=== AI Crawlers & LLM Bots - Explicitly Allowed =============
+# === AI Crawlers & LLM Bots - Explicitly Allowed =============
 
 User-agent: *
 Allow: /
