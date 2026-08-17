@@ -39,7 +39,7 @@ const SEOHead = ({
 
   const stripBrandFromTitle = (value: string) =>
     value
-      .replace(/\s*[|–—-]?\s*LegalAlimonyCalculator\.com\s*/gi, " ")
+      .replace(/\s*[|–—-]?\s*AlimonyCalculator\s*/gi, " ")
       .replace(/\s{2,}/g, " ")
       .trim();
   const effectiveTitle = override.metaTitle || title;

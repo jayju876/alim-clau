@@ -14,7 +14,7 @@ const Navigation = () => {
         <div className="flex justify-between items-center h-16">
           <Link to="/" className="flex items-center space-x-2">
             <Scale className="h-8 w-8 text-legal-blue" />
-            <span className="text-xl font-bold text-legal-blue">LegalAlimonyCalculator</span>
+            <span className="text-xl font-bold text-legal-blue">AlimonyCalculator</span>
           </Link>
 
           {/* Desktop Navigation */}

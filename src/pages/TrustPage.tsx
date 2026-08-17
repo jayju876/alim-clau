@@ -15,7 +15,7 @@ type TrustPageProps = {
 const pageCopy: Record<string, { title: string; description: string; sections: Array<{ heading: string; body: string | string[] }> }> = {
   "privacy-policy": {
     title: "Privacy Policy",
-    description: "Learn how LegalAlimonyCalculator.com protects calculator privacy and handles contact form information.",
+    description: "Learn how AlimonyCalculator protects calculator privacy and handles contact form information.",
     sections: [
       { heading: "Calculator Privacy", body: "Income and alimony inputs are calculated in your browser. We do not require registration to use the calculator." },
       { heading: "Contact Forms", body: "If you contact us, we may use the information you provide to respond to your request. Do not submit confidential legal facts through the contact form." },
@@ -42,7 +42,7 @@ const pageCopy: Record<string, { title: string; description: string; sections: A
   },
   "legal-disclaimer": {
     title: "Legal Disclaimer",
-    description: "Important legal disclaimer for LegalAlimonyCalculator.com alimony estimates and educational content.",
+    description: "Important legal disclaimer for AlimonyCalculator alimony estimates and educational content.",
     sections: [
       { heading: "Not Legal Advice", body: "This calculator provides estimated alimony figures based on publicly available guidelines and should not be considered legal advice." },
       { heading: "No Attorney-Client Relationship", body: "Using this website, contacting us, or reading reviewed content does not create an attorney-client relationship." },
@@ -95,11 +95,11 @@ const pageCopy: Record<string, { title: string; description: string; sections: A
 const pageSeo: Record<string, { title: string; description: string }> = {
   "privacy-policy": {
     title: "Privacy Policy | Data Handling",
-    description: "See how LegalAlimonyCalculator.com handles calculator inputs, contact information, cookies, and privacy for visitors using our alimony tools."
+    description: "See how AlimonyCalculator handles calculator inputs, contact information, cookies, and privacy for visitors using our alimony tools."
   },
   "terms-and-conditions": {
     title: "Alimony Calculator Terms & Conditions | User Rules",
-    description: "Review the terms for using LegalAlimonyCalculator.com, including educational use, calculator estimates, acceptable use, and legal limitations."
+    description: "Review the terms for using AlimonyCalculator, including educational use, calculator estimates, acceptable use, and legal limitations."
   },
   "editorial-policy": {
     title: "Editorial Policy for Alimony Content | Review Standards",

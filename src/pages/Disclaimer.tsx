@@ -8,14 +8,14 @@ import { SITE_URL } from "@/data/seo";
 const Disclaimer = () => {
   return (
     <div className="min-h-screen bg-background">
-      <SEOHead 
+      <SEOHead
         title="Alimony Calculator Legal Disclaimer | Limits of Use"
-        description="Read the legal disclaimer for LegalAlimonyCalculator.com, including calculator limitations, educational-use guidance, liability boundaries, and privacy notes."
+        description="Read the legal disclaimer for AlimonyCalculator, including calculator limitations, educational-use guidance, liability boundaries, and privacy notes."
         keywords="legal disclaimer, privacy policy, alimony calculator legal terms, liability limitation"
         canonical={`${SITE_URL}/disclaimer`}
       />
       <Navigation />
-      
+
       <main className="container mx-auto px-4 py-12">
         {/* Hero Section */}
         <div className="max-w-4xl mx-auto text-center mb-16">
@@ -38,7 +38,7 @@ const Disclaimer = () => {
             </CardHeader>
             <CardContent className="text-yellow-700 space-y-4">
               <p className="font-semibold">
-                The alimony calculators provided on LegalAlimonyCalculator.com are for informational and educational purposes only.
+                The alimony calculators provided on AlimonyCalculator are for informational and educational purposes only.
               </p>
               <ul className="list-disc pl-6 space-y-2">
                 <li>These calculators provide estimates only and should not be considered legal advice</li>
@@ -59,11 +59,11 @@ const Disclaimer = () => {
             </CardHeader>
             <CardContent className="space-y-4">
               <p>
-                The information and calculations provided on this website do not constitute legal advice and should not be relied upon as such. 
-                LegalAlimonyCalculator.com does not establish an attorney-client relationship with users.
+                The information and calculations provided on this website do not constitute legal advice and should not be relied upon as such.
+                AlimonyCalculator does not establish an attorney-client relationship with users.
               </p>
               <p>
-                For specific legal advice regarding your situation, you should consult with a qualified family law attorney 
+                For specific legal advice regarding your situation, you should consult with a qualified family law attorney
                 licensed to practice in your jurisdiction. Laws vary by state and are subject to change.
               </p>
               <div className="bg-muted p-4 rounded-lg">
@@ -89,7 +89,7 @@ const Disclaimer = () => {
             </CardHeader>
             <CardContent className="space-y-4">
               <p>
-                LegalAlimonyCalculator.com, its owners, operators, and contributors shall not be liable for any damages, 
+                AlimonyCalculator, its owners, operators, and contributors shall not be liable for any damages,
                 losses, or legal consequences arising from:
               </p>
               <ul className="list-disc pl-6 space-y-2">
@@ -115,25 +115,25 @@ const Disclaimer = () => {
             <CardContent className="space-y-4">
               <h3 className="font-semibold">Information Collection</h3>
               <p>
-                We do not collect, store, or transmit any personal financial information entered into our calculators. 
+                We do not collect, store, or transmit any personal financial information entered into our calculators.
                 All calculations are performed locally in your browser.
               </p>
-              
+
               <h3 className="font-semibold">Data Storage</h3>
               <p>
-                Your calculation inputs are not saved on our servers. When you close or refresh the page, 
+                Your calculation inputs are not saved on our servers. When you close or refresh the page,
                 all entered information is permanently deleted.
               </p>
-              
+
               <h3 className="font-semibold">Contact Information</h3>
               <p>
-                If you contact us through our contact form, we collect only the information you voluntarily provide 
+                If you contact us through our contact form, we collect only the information you voluntarily provide
                 (name, email, message) to respond to your inquiry. This information is not shared with third parties.
               </p>
-              
+
               <h3 className="font-semibold">Cookies and Analytics</h3>
               <p>
-                We may use basic analytics to understand website usage patterns, but we do not track personal information 
+                We may use basic analytics to understand website usage patterns, but we do not track personal information
                 or link analytics data to individual users.
               </p>
             </CardContent>
@@ -146,11 +146,11 @@ const Disclaimer = () => {
             </CardHeader>
             <CardContent className="space-y-4">
               <p>
-                While we strive to keep our calculators current with applicable laws and guidelines, 
+                While we strive to keep our calculators current with applicable laws and guidelines,
                 we cannot guarantee that all information is completely up-to-date or accurate for every jurisdiction.
               </p>
               <p>
-                State laws regarding alimony are subject to change, and courts may interpret guidelines differently. 
+                State laws regarding alimony are subject to change, and courts may interpret guidelines differently.
                 We recommend verifying current laws and seeking professional legal counsel for the most accurate information.
               </p>
               <p className="text-sm text-muted-foreground">
@@ -166,8 +166,8 @@ const Disclaimer = () => {
                 Need Legal Representation?
               </p>
               <p className="text-center text-muted-foreground">
-                For qualified legal advice and representation in family law matters, 
-                please consult with a licensed attorney in your area. We recommend contacting 
+                For qualified legal advice and representation in family law matters,
+                please consult with a licensed attorney in your area. We recommend contacting
                 your state bar association for attorney referrals.
               </p>
             </CardContent>

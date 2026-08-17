@@ -11,7 +11,7 @@ const Footer = () => {
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
               <Scale className="h-6 w-6 text-legal-blue" />
-              <span className="text-lg font-bold text-legal-blue">LegalAlimonyCalculator</span>
+              <span className="text-lg font-bold text-legal-blue">AlimonyCalculator</span>
             </div>
             <p className="text-muted-foreground mb-4 max-w-md">
               Free US alimony calculator platform with state-wise spousal support estimates, legal notes, and privacy-friendly browser calculations.
@@ -68,7 +68,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t mt-8 pt-8 text-center text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} LegalAlimonyCalculator.com. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} AlimonyCalculator. All rights reserved.</p>
         </div>
       </div>
     </footer>

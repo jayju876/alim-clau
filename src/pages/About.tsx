@@ -11,23 +11,23 @@ const About = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <SEOHead 
+      <SEOHead
         title="About the Alimony Calculator | Tools & Methodology"
-        description="Learn how LegalAlimonyCalculator.com builds free, state-specific alimony calculators using public family-law factors, expert review, and browser-based privacy."
+        description="Learn how AlimonyCalculator builds free, state-specific alimony calculators using public family-law factors, expert review, and browser-based privacy."
         keywords="about alimony calculator, legal expertise, family law tools, divorce support tools"
         canonical={`${SITE_URL}/about`}
         structuredData={structuredData}
       />
       <Navigation />
-      
+
       <main className="container mx-auto px-4 py-12">
         {/* Hero Section */}
         <div className="max-w-4xl mx-auto text-center mb-16">
           <h1 className="text-4xl font-bold text-foreground mb-6">
-            About LegalAlimonyCalculator.com
+            About AlimonyCalculator
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Providing accurate, reliable alimony calculations based on current state laws and legal guidelines 
+            Providing accurate, reliable alimony calculations based on current state laws and legal guidelines
             to help individuals understand their potential financial obligations or entitlements.
           </p>
         </div>
@@ -43,7 +43,7 @@ const About = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  Our calculators are based on current state-specific alimony laws, guidelines, and judicial precedents 
+                  Our calculators are based on current state-specific alimony laws, guidelines, and judicial precedents
                   to provide the most accurate estimates possible.
                 </p>
               </CardContent>
@@ -56,7 +56,7 @@ const About = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  We consider income differences, marriage duration, number of children, and other relevant factors 
+                  We consider income differences, marriage duration, number of children, and other relevant factors
                   that courts typically evaluate when determining alimony awards.
                 </p>
               </CardContent>
@@ -69,7 +69,7 @@ const About = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  Our formulas are developed and reviewed by legal professionals familiar with family law 
+                  Our formulas are developed and reviewed by legal professionals familiar with family law
                   to ensure accuracy and compliance with current legal standards.
                 </p>
               </CardContent>
@@ -161,7 +161,7 @@ const About = () => {
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground mb-4">
-                    Our calculations are based on comprehensive analysis of state family law statutes, court rules, 
+                    Our calculations are based on comprehensive analysis of state family law statutes, court rules,
                     and established judicial guidelines across all 50 states.
                   </p>
                   <ul className="text-sm text-muted-foreground space-y-1">
@@ -180,7 +180,7 @@ const About = () => {
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground mb-4">
-                    Each calculator undergoes rigorous testing and review to ensure accuracy and reliability 
+                    Each calculator undergoes rigorous testing and review to ensure accuracy and reliability
                     within the bounds of general legal guidelines.
                   </p>
                   <ul className="text-sm text-muted-foreground space-y-1">
@@ -203,12 +203,12 @@ const About = () => {
             </CardHeader>
             <CardContent>
               <p className="text-yellow-700 mb-4">
-                LegalAlimonyCalculator.com provides educational tools and estimates only. Our calculators are not a substitute 
+                AlimonyCalculator provides educational tools and estimates only. Our calculators are not a substitute
                 for professional legal advice and should not be relied upon for making important legal or financial decisions.
               </p>
               <p className="text-yellow-700">
-                Actual alimony awards are determined by courts based on specific circumstances, evidence presented, 
-                and judicial discretion. We strongly recommend consulting with a qualified family law attorney 
+                Actual alimony awards are determined by courts based on specific circumstances, evidence presented,
+                and judicial discretion. We strongly recommend consulting with a qualified family law attorney
                 for personalized legal guidance regarding your situation.
               </p>
             </CardContent>

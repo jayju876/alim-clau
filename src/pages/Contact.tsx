@@ -41,7 +41,7 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!formData.name || !formData.email || !formData.message) {
       toast.error("Please fill in all required fields");
       return;
@@ -49,7 +49,7 @@ const Contact = () => {
 
     // In a real application, this would send the form data to a server
     toast.success("Thank you for your message. We'll get back to you soon!");
-    
+
     // Reset form
     setFormData({
       name: "",
@@ -68,15 +68,15 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <SEOHead 
+      <SEOHead
         title="Contact the Alimony Calculator Team | Support"
-        description="Contact LegalAlimonyCalculator.com with questions or feedback about our free alimony calculators, spousal support estimates, and family-law resources."
+        description="Contact AlimonyCalculator with questions or feedback about our free alimony calculators, spousal support estimates, and family-law resources."
         keywords="contact alimony calculator, calculator support, legal questions, spousal support help"
         canonical={`${SITE_URL}/contact`}
         structuredData={structuredData}
       />
       <Navigation />
-      
+
       <main className="container mx-auto px-4 py-12">
         {/* Hero Section */}
         <div className="max-w-4xl mx-auto text-center mb-16">
@@ -84,7 +84,7 @@ const Contact = () => {
             Contact Us
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Have questions about our alimony calculators or need assistance? We're here to help. 
+            Have questions about our alimony calculators or need assistance? We're here to help.
             Reach out to us for support or feedback.
           </p>
         </div>
@@ -179,7 +179,7 @@ const Contact = () => {
                     For questions about our calculators, features, or general support.
                   </p>
                 </div>
-                
+
                 <div>
                   <h4 className="font-semibold mb-2">Response Time</h4>
                   <p className="text-muted-foreground">
@@ -203,14 +203,14 @@ const Contact = () => {
                     Our calculators provide estimates based on state guidelines, but actual awards may vary.
                   </p>
                 </div>
-                
+
                 <div>
                   <h4 className="font-semibold mb-2">Is this legal advice?</h4>
                   <p className="text-sm text-muted-foreground">
                     No, our calculators are educational tools only. Consult an attorney for legal advice.
                   </p>
                 </div>
-                
+
                 <div>
                   <h4 className="font-semibold mb-2">Do you store my data?</h4>
                   <p className="text-sm text-muted-foreground">
@@ -227,9 +227,9 @@ const Contact = () => {
           <Card className="bg-yellow-50 border-yellow-200">
             <CardContent className="pt-6">
               <p className="text-sm text-yellow-700">
-                <strong>Important:</strong> LegalAlimonyCalculator.com does not provide legal advice. 
-                If you have specific legal questions or need representation, please consult with a qualified 
-                family law attorney in your jurisdiction. Our responses to inquiries are for informational 
+                <strong>Important:</strong> AlimonyCalculator does not provide legal advice.
+                If you have specific legal questions or need representation, please consult with a qualified
+                family law attorney in your jurisdiction. Our responses to inquiries are for informational
                 purposes only and do not constitute attorney-client relationships.
               </p>
             </CardContent>
